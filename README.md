@@ -1,9 +1,8 @@
+# REQUERIMIENTOS
 
-#REQUERIMIENTOS
+## Debe tener
 
-##Debe tener
-
-####1. Hacer un scraper que extraiga todos los datos de interés de la página.
+#### 1. Hacer un scraper que extraiga todos los datos de interés de la página.
 
 > - urls de las ediciones de todos los hackatones de argentina.
 > - buscar si los posteos tienen tags de su temática.
@@ -24,7 +23,7 @@
 
 > _(todos los campos serán requeridos excepto el de imagenUrl. También se usarán { timestamps: true } propias en caso de no poder contar con la hora del post original. Esto agilizará las peticiones asincrónicas ya que la hora real de carga del post no es un dato muy importante)_
 
-####1.2. Si no se pueden acceder a los tags de las temáticas:
+#### 1.2. Si no se pueden acceder a los tags de las temáticas:
 
 > - Mejorar el modelo de NLP para evitar el `under/over-fitting`.
 > - Mejorar el conste del algoritmo de etiquetado usando un hash table.
@@ -47,9 +46,11 @@ export const labelThisDocument = (record: idea) => {
 > - Hacer una calificación ponderada de los tags. Ordenarlos según su importancia en el array.
 > - Hacer un for in desde i = 0 hasta el length del array de etiquetas de >mayor tamaño para poder iterar todos los arrays de etiquetas a la vez. => >hacer breaks del loop en los arrays que no sean el de mayor tamaño.
 
-####1.3 Hacerle `google dorking` a la página
-####2. Hacer un api para comprimir las imágenes obtenidas y subirlas a cloudinary.
-####3. Migrar el front a react basado en funciones. Hacer el responsive design.
+#### 1.3 Hacerle `google dorking` a la página
+
+#### 2. Hacer un api para comprimir las imágenes obtenidas y subirlas a cloudinary.
+
+#### 3. Migrar el front a react basado en funciones. Hacer el responsive design.
 
 ```TypeScript
 // renderer.ts
@@ -105,9 +106,12 @@ getTop();
 
 ```
 
-####4. Organizar las apis para hacer el backend.
-####5. Hacer un api para elegir que hackaton mostrarle al cliente y que indique cual es su proyecto.
-####6. Hacer muchas apis (pensar mucho). La api de update de la base de datos me va a costar un montón hacerla mmmm. Hay que saber cuáles son los hackatones sujetos a cambios en momento en el que el cliente usar la página.
+#### 4. Organizar las apis para hacer el backend.
+
+#### 5. Hacer un api para elegir que hackaton mostrarle al cliente y que indique cual es su proyecto.
+
+#### 6. Hacer muchas apis (pensar mucho). La api de update de la base de datos me va a costar un montón hacerla mmmm. Hay que saber cuáles son los hackatones sujetos a cambios en momento en el que el cliente usar la página.
+
 ... Crear un `procfile` para TypeScript y subir el backend a Heroku.
 ... El cliente debe poder:
 
@@ -116,4 +120,5 @@ getTop();
 - Consultar toda la información que necesite de manera rápida con una barra de busqueda. Los resultados de la hackaton en el que el cliente participa no deben estar paginados.
 
 ##Estaría bueno que tenga
+
 # Hackaton-pae-nq-
