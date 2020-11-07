@@ -119,6 +119,6 @@ getTop();
 - Ordenar por fecha de actualización, likes, tags y entregables terminados.
 - Consultar toda la información que necesite de manera rápida con una barra de busqueda. Los resultados de la hackaton en el que el cliente participa no deben estar paginados.
 
-##Estaría bueno que tenga
+## Sería bueno que tenga
 
 # Hackaton-pae-nq-
