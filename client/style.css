@@ -1,0 +1,135 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"); */
+
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+* {
+  font-family: "system";
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f8fa;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  max-height: 3em;
+  background-color: white;
+  padding: 5px;
+  margin: 0;
+  border-top: 3px solid #d1d5da;
+  color: #24292e;
+  border-bottom: 1px solid #d1d5da;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-list,
+menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu-list * {
+  margin: 10px;
+}
+
+.menu-list {
+  margin: 0;
+}
+
+.menu-item {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left,
+.right {
+  margin-top: 70px;
+  width: 50%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.box {
+  color: #24292e;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5da;
+  background-color: white;
+
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+.big {
+  margin-bottom: 40px;
+}
+
+.col-wrapper {
+  position: fixed;
+  margin: 0 20px;
+  width: 48%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #f6f8fa;
+}
+
+.app-list-element {
+  margin-bottom: 20px;
+}
+.input-number {
+  outline: none;
+  border: 0;
+  width: 60px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#top-10 {
+  overflow-y: auto;
+  max-height: 300px;
+}

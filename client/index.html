@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hackatón Pae</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="menu">
+        <ul class="menu-list">
+          <li class="menu-item">
+            <button class="btn refresh">
+              <span style="color: blue">Actualizar Resultados</span></button
+            >|
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="most-recent">Más reciente</button>|
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="most-liked">Cantidad de likes</button>|
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="ecología">#Ecología</button>|
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="medicina">#Medicina</button>|
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="transporte">#Transporte</button>
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="inclusión">#Inclusión</button>
+          </li>
+          <li class="menu-item">
+            <button class="btn" id="economía">#Economía</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main-content">
+      <div class="left">
+        <div id="ideas">
+          <ul id="app"></ul>
+        </div>
+      </div>
+      <div class="right">
+        <section class="col-wrapper">
+          <h3 id="date"></h3>
+          <div id="top-10" class="box big">
+            <h2>
+              Top <input type="number" min="1" class="input-number" value="5" />
+            </h2>
+            <table id="tbody">
+              <tr>
+                <th>Proyecto</th>
+                <th>Likes</th>
+                <th>Tag</th>
+              </tr>
+            </table>
+          </div>
+          <div id="chart" class="box big">
+            <h2>Temáticas</h2>
+            <canvas id="proyectCanvas" width="600" height="200"></canvas>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+  <script src="js/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE.js"></script>
+  <script src="./js/renderer.js"></script>
+</html>
