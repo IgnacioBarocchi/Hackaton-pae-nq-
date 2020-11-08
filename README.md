@@ -1,5 +1,9 @@
 # REQUERIMIENTOS
 
+## Urgente
+
+> - hacer un `html` bundle cada vez que compilo el código `TypeScript` del cliente.
+
 ## Debe tener
 
 #### 1. Hacer un scraper que extraiga todos los datos de interés de la página.

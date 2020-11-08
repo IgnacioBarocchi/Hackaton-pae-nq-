@@ -17,6 +17,11 @@ export const labelThisDocument = (record: idea) => {
   return record;
 };
 
+// const cleanLabelsOf = (record) => {};
+
+// const labelLocally = (db) => {
+//   bd.map((record) => labelThisDocument(record));
+// };
 /**
  * @todo
  * This hash table

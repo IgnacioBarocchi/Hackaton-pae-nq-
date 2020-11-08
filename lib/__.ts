@@ -1,6 +1,6 @@
 import { getAugmentedData } from "./createAugmentedData";
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
-import type { idea } from "../utils/types";
+import type { idea, collection } from "../utils/types";
 
 const { containerBootstrap } = require("@nlpjs/core");
 const { Nlp } = require("@nlpjs/nlp");
@@ -44,8 +44,8 @@ trainWith(naturalClassifier, "dev-set", 8);
  * @todo
  * Decoupling.
  */
-const asyncTrainAndPredcitWith = async (model: any, input: string) => {
-  COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE.forEach((record: idea) => {
+const asyncPredcitWith = async (model: any, input: string, db: collection) => {
+  db.forEach((record: idea) => {
     const { description, tags } = record;
     model.addDocument("es", description, tags);
   });
@@ -55,9 +55,10 @@ const asyncTrainAndPredcitWith = async (model: any, input: string) => {
   return prediction;
 };
 
-asyncTrainAndPredcitWith(
+asyncPredcitWith(
   nlp,
-  "Nuestro equipo propone un proyecto en el cual vamos a incentivar el reciclado de los residuos a través de medios digitales. Usaremos una app interactiva la cuál tendrá funciones que motivarán al reciclado. Las personas separaran los residuos y los depositarán en iglús, los cuales nosotros recogeremos, acoplaremos en centros verdes y  realizaremos  procesos de reciclado. Se realizarán procesos artesanales por cada material que se reciba en la planta. Logrando con estos, productos que luego serán comercializados y entregados a la gente como premios por reciclar a través de la app."
+  "Nuestro equipo propone un proyecto en el cual vamos a incentivar el reciclado de los residuos a través de medios digitales. Usaremos una app interactiva la cuál tendrá funciones que motivarán al reciclado. Las personas separaran los residuos y los depositarán en iglús, los cuales nosotros recogeremos, acoplaremos en centros verdes y  realizaremos  procesos de reciclado. Se realizarán procesos artesanales por cada material que se reciba en la planta. Logrando con estos, productos que luego serán comercializados y entregados a la gente como premios por reciclar a través de la app.",
+  COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE
 );
 
 const testCLassifier = (model: any) => {
