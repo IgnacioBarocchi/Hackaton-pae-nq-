@@ -1,5 +1,5 @@
-//
 import React, { useMemo, useContext } from "react";
+//@ts-ignore
 import { Chart } from "react-charts";
 import { DataBaseContext } from "../App";
 

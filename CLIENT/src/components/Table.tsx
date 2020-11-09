@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { DataBaseContext } from "../App";
-
+import type {idea} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE"
 export default function Table() {
   const { state } = useContext(DataBaseContext);
   const [number, setNumber] = useState(5);
@@ -16,7 +16,7 @@ export default function Table() {
           className="input-number"
           value={number.toString()}
           onChange={(e) => {
-            setNumber(e.target.value);
+            setNumber(parseInt(e.target.value));
             console.log(number);
           }}
         />
@@ -27,7 +27,7 @@ export default function Table() {
           <th style={{ textAlign: "center" }}>Likes</th>
           <th style={{ textAlign: "center" }}>Tema</th>
         </tr>
-        {state.slice(0, number).map((record) => {
+        {state.slice(0, number).map((record:idea) => {
           return (
             <tr>
               <td>{record.title}</td>

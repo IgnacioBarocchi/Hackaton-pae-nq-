@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { DataBaseContext } from "../App";
+import type {idea} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE"
 
 export default function Ul() {
   const { state } = useContext(DataBaseContext);
@@ -7,7 +8,7 @@ export default function Ul() {
 
   return (
     <ul id="#project-list">
-      {state.map((record) => (
+      {state.map((record:idea) => (
         <li className="app-list-element ">
           <div className="box card">
             <header

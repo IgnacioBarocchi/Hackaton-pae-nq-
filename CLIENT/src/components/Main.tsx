@@ -3,7 +3,7 @@ import Ul from "./Ul";
 import Table from "./Table";
 import Chart_ from "./Chart";
 
-export default function Main(props) {
+export default function Main() {
   return (
     <main className="main-content">
       <div className="left">
