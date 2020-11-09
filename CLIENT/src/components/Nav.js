@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function Nav() {
+export default function Nav(props) {
+  const db = props.db;
   return (
     <nav className="nav">
       <div className="menu">
