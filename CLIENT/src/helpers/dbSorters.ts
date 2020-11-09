@@ -1,25 +1,22 @@
-export const sortByLikes = (array: any) => {
-  return [...array].sort((a: { likes: string }, b: { likes: string }) =>
+import type {
+  collection,
+  idea,
+} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
+
+export const sortByLikes = (array: collection): collection =>
+  [...array].sort((a: idea, b: idea) =>
     parseInt(a.likes) < parseInt(b.likes)
       ? 1
       : parseInt(b.likes) < parseInt(a.likes)
       ? -1
       : 0
   );
-};
 
-export const sortByTag = (array: any, tag: string) => {
-  return [
-    ...array,
-  ].sort(
-    (
-      a: { tags: { includes: (arg0: string) => number } },
-      b: { tags: { includes: (arg0: string) => number } }
-    ) =>
-      a.tags.includes(tag) < b.tags.includes(tag)
-        ? 1
-        : b.tags.includes(tag) < a.tags.includes(tag)
-        ? -1
-        : 0
+export const sortByTag = (array: collection, tag: string): collection =>
+  [...array].sort((a: idea, b: idea) =>
+    a.tags.includes(tag) < b.tags.includes(tag)
+      ? 1
+      : b.tags.includes(tag) < a.tags.includes(tag)
+      ? -1
+      : 0
   );
-};

@@ -1,5 +1,4 @@
-var client = require("github-graphql-client");
-require("dotenv").config();
+const client = require("github-graphql-client");
 const owner = "IgnacioBarocchi";
 const repo = "Hackaton-pae-nq-";
 const branchQuery = `
@@ -78,7 +77,7 @@ function doRequest(query, variables) {
   return new Promise(function (resolve, reject) {
     client(
       {
-        token: process.env.REACT_APP_GITHUB_TOKEN,
+        token: import("./utils/key"),
         query: query,
         variables: variables,
       },
