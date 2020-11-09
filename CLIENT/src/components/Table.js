@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { DataBaseContext } from "../App";
 
-export default function Table(props) {
+export default function Table() {
+  const { state } = useContext(DataBaseContext);
   const [number, setNumber] = useState(5);
-  const db = props.db.db;
-  console.log(db.length);
+
   return (
     <div id="top-10" className="box big box-content">
       <h2>
@@ -11,7 +12,7 @@ export default function Table(props) {
         <input
           type="number"
           min="1"
-          max={db.length.toString()}
+          max={state.length.toString()}
           className="input-number"
           value={number.toString()}
           onChange={(e) => {
@@ -26,7 +27,7 @@ export default function Table(props) {
           <th style={{ textAlign: "center" }}>Likes</th>
           <th style={{ textAlign: "center" }}>Tema</th>
         </tr>
-        {db.slice(0, number).map((record) => {
+        {state.slice(0, number).map((record) => {
           return (
             <tr>
               <td>{record.title}</td>

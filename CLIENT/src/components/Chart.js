@@ -1,8 +1,10 @@
 //
-import React, { useMemo } from "react";
+import React, { useMemo, useContext } from "react";
 import { Chart } from "react-charts";
+import { DataBaseContext } from "../App";
 
 export default function Chart_() {
+  const { state } = useContext(DataBaseContext);
   return (
     <div id="chart" className="box big box-content">
       <h2>Temáticas</h2>

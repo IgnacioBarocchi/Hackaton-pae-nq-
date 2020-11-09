@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataBaseContext } from "../App";
 
-export default function Ul(props) {
-  const data = props.db.db;
+export default function Ul() {
+  const { state } = useContext(DataBaseContext);
+  console.log("state es ", state);
+
   return (
     <ul id="#project-list">
-      {data.map((record) => (
+      {state.map((record) => (
         <li className="app-list-element ">
           <div className="box card">
             <header

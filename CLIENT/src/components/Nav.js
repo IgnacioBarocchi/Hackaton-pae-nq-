@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataBaseContext } from "../App";
 
-export default function Nav(props) {
-  const db = props.db;
+export default function Nav() {
+  const { state } = useContext(DataBaseContext);
   return (
     <nav className="nav">
       <div className="menu">

@@ -6,8 +6,7 @@ import Nav from "./components/Nav";
 import Main from "./components/Main";
 
 import { dataBaseReducer, initialState } from "./reducer/dataBaseReducer";
-import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from "./data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
-import { sortByLikes } from "./helpers/dbSorters";
+
 //@ts-ignore
 export const DataBaseContext: any = createContext();
 
@@ -23,7 +22,7 @@ const Data = () => {
         })
       : localStorage.setItem(
           "data",
-          JSON.stringify(COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE),
+          JSON.stringify(initialState),
         );
   });
   return <></>;
@@ -34,8 +33,8 @@ function App():any {
   return (
     <DataBaseContext.Provider value={{ state, dispatch }}>
       <Data />
-      <Nav db={COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE} />
-      <Main db={sortByLikes(COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE)} />
+      <Nav />
+      <Main />
     </DataBaseContext.Provider>
   );
 }

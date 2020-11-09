@@ -8,14 +8,14 @@ export default function Main(props) {
     <main className="main-content">
       <div className="left">
         <div id="ideas">
-          <Ul db={props} />
+          <Ul />
         </div>
       </div>
       <div className="right">
         <section className="col-wrapper">
           <h3 id="date"></h3>
-          <Table db={props} />
-          <Chart_ db={props} />
+          <Table />
+          <Chart_ />
         </section>
       </div>
     </main>
