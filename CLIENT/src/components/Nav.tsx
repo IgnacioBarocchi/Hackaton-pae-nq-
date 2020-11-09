@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { DataBaseContext } from "../App";
 
 export default function Nav() {
-  const { state } = useContext(DataBaseContext);
+  const { dispatch, state } = useContext(DataBaseContext);
   return (
     <nav className="nav">
       <div className="menu">
@@ -26,7 +26,9 @@ export default function Nav() {
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="ecología">
+            <button className="btn" id="ecología" onClick={() =>{
+              dispatch({ type: "SORTERED_BY_TAG_ECOLOGIA", payload: state});
+            }}>
               #Ecología
             </button>
             |
