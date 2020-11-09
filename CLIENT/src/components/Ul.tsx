@@ -4,12 +4,10 @@ import type {idea} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE"
 
 export default function Ul() {
   const { state } = useContext(DataBaseContext);
-  console.log("state es ", state);
-
   return (
     <ul id="#project-list">
-      {state.map((record:idea) => (
-        <li className="app-list-element ">
+      {state.map((record:idea, index: number) => (
+        <li className="app-list-element " key={index}>
           <div className="box card">
             <header
               className="card-title"

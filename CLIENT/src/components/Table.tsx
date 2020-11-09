@@ -17,7 +17,6 @@ export default function Table() {
           value={number.toString()}
           onChange={(e) => {
             setNumber(parseInt(e.target.value));
-            console.log(number);
           }}
         />
       </h2>

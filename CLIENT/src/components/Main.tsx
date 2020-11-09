@@ -2,6 +2,7 @@ import React from "react";
 import Ul from "./Ul";
 import Table from "./Table";
 import Chart_ from "./Chart";
+import GithubReporter from "./GithubReporter"
 
 export default function Main() {
   return (
@@ -16,6 +17,7 @@ export default function Main() {
           <h3 id="date"></h3>
           <Table />
           <Chart_ />
+          <GithubReporter />
         </section>
       </div>
     </main>

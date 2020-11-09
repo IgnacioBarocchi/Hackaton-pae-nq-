@@ -43,11 +43,13 @@ export default function Nav() {
             <button className="btn" id="transporte">
               #Transporte
             </button>
+            |
           </li>
           <li className="menu-item">
             <button className="btn" id="inclusión">
               #Inclusión
             </button>
+            |
           </li>
           <li className="menu-item">
             <button className="btn" id="economía">
