@@ -7,11 +7,12 @@ import Main from "./components/Main";
 
 import { dataBaseReducer, initialState } from "./reducer/dataBaseReducer";
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from "./data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
-import { sortByLikes } from "./helpers/dbSorters.ts";
-export const DataBaseContext = createContext();
+import { sortByLikes } from "./helpers/dbSorters";
+//@ts-ignore
+export const DataBaseContext: any = createContext();
 
 const Data = () => {
-  const { dispatch } = useContext(DataBaseContext);
+  const { dispatch }:any = useContext(DataBaseContext);
 
   useEffect(() => {
     const data = localStorage.getItem("data");
@@ -23,13 +24,12 @@ const Data = () => {
       : localStorage.setItem(
           "data",
           JSON.stringify(COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE),
-          []
         );
   });
   return <></>;
 };
 
-function App() {
+function App():any {
   const [state, dispatch] = useReducer(dataBaseReducer, initialState);
   return (
     <DataBaseContext.Provider value={{ state, dispatch }}>
