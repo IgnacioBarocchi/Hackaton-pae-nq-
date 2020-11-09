@@ -9,13 +9,19 @@ export default function GithubReporter() {
 
   const branchMaster = JSON.parse(localStorage.getItem("GitHub-repo")).branch0;
   const { author, committedDate, message, oid } = branchMaster.commits[0];
-
+  console.log(branchMaster);
   return (
-    <div className="box big box-content">
-      <strong>Author:</strong> {author.name} <strong>Commit:</strong>{" "}
-      <span style={{ color: "lime" }}> {committedDate}</span>{" "}
-      <strong>Commit Message:</strong> {message} <strong>Hash:</strong>
-      <pre>{oid}</pre>
+    <div className="box box-content">
+      <div>
+        <strong>Author: </strong> {author.name}
+        <strong> Fecha: </strong> {committedDate}
+      </div>
+      <div>
+        <strong> Commit Message: </strong>
+        <span style={{ color: "#11a8cd" }}>{message}</span>
+        <strong> Hash: </strong>
+        <pre style={{ fontSize: "16px", color: "#0dbc79" }}>{oid}</pre>
+      </div>
     </div>
   );
 }

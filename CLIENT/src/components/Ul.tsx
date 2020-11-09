@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { DataBaseContext } from "../App";
-import type {idea} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE"
+import type { idea } from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
 
 export default function Ul() {
   const { state } = useContext(DataBaseContext);
+  if (!state) return <h3>Cargando...</h3>;
   return (
     <ul id="#project-list">
-      {state.map((record:idea, index: number) => (
+      {state.map((record: idea, index: number) => (
         <li className="app-list-element " key={index}>
           <div className="box card">
             <header
@@ -27,8 +28,10 @@ export default function Ul() {
               <p>{record.description}</p>
               {record.tags.length === 0
                 ? ""
-                : record.tags.map((tag) => (
-                    <span className="tag-span">#{tag}</span>
+                : record.tags.map((tag, index) => (
+                    <span key={index} className="tag-span">
+                      #{tag}
+                    </span>
                   ))}
               <p>
                 <a href={record.source}>

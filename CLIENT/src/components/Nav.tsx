@@ -20,39 +20,76 @@ export default function Nav() {
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="most-liked">
+            <button
+              className="btn"
+              id="most-liked"
+              onClick={() => {
+                dispatch({ type: "SORTED_BY_LIKES", payload: state });
+              }}
+            >
               Cantidad de likes
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="ecología" onClick={() =>{
-              dispatch({ type: "SORTERED_BY_TAG_ECOLOGIA", payload: state});
-            }}>
+            <button
+              className="btn"
+              id="ecología"
+              onClick={() => {
+                dispatch({ type: "SORTERED_BY_TAG_ECOLOGIA", payload: state });
+              }}
+            >
               #Ecología
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="medicina">
+            <button
+              className="btn"
+              id="medicina"
+              onClick={() => {
+                dispatch({ type: "SORTERED_BY_TAG_MEDICINA", payload: state });
+              }}
+            >
               #Medicina
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="transporte">
+            <button
+              className="btn"
+              id="transporte"
+              onClick={() => {
+                dispatch({
+                  type: "SORTERED_BY_TAG_TRANSPORTE",
+                  payload: state,
+                });
+              }}
+            >
               #Transporte
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="inclusión">
+            <button
+              className="btn"
+              id="inclusión"
+              onClick={() => {
+                dispatch({ type: "SORTERED_BY_TAG_INCLUSION", payload: state });
+              }}
+            >
               #Inclusión
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="economía">
+            <button
+              className="btn"
+              id="economía"
+              onClick={() => {
+                dispatch({ type: "SORTERED_BY_TAG_ECONOMIA", payload: state });
+              }}
+            >
               #Economía
             </button>
           </li>

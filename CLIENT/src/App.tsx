@@ -5,13 +5,13 @@ import React, { useEffect, createContext, useReducer, useContext } from "react";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 
-import { dataBaseReducer, initialState } from "./reducer/dataBaseReducer";
+import { dataBaseReducer, initialDataBase } from "./reducer/dataBaseReducer";
 
 //@ts-ignore
 export const DataBaseContext: any = createContext();
 
 const Data = () => {
-  const { dispatch }:any = useContext(DataBaseContext);
+  const { dispatch }: any = useContext(DataBaseContext);
 
   useEffect(() => {
     const data = localStorage.getItem("data");
@@ -20,16 +20,13 @@ const Data = () => {
           type: "SORTED_BY_TIME",
           payload: data,
         })
-      : localStorage.setItem(
-          "data",
-          JSON.stringify(initialState),
-        );
+      : localStorage.setItem("data", JSON.stringify(initialDataBase));
   });
   return <></>;
 };
 
-function App():any {
-  const [state, dispatch] = useReducer(dataBaseReducer, initialState);
+function App(): any {
+  const [state, dispatch] = useReducer(dataBaseReducer, initialDataBase);
   return (
     <DataBaseContext.Provider value={{ state, dispatch }}>
       <Data />

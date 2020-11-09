@@ -1,9 +1,12 @@
-import React, { useState, useContext } from "react";
-import { DataBaseContext } from "../App";
-import type {idea} from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE"
+import React, { useState } from "react";
+import type { idea } from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
+import { sortedByLikes } from "../reducer/dataBaseReducer";
+
 export default function Table() {
-  const { state } = useContext(DataBaseContext);
+  // const { state } = useContext(DataBaseContext);
   const [number, setNumber] = useState(5);
+
+  if (!sortedByLikes) return <h3>Cargando...</h3>;
 
   return (
     <div id="top-10" className="box big box-content">
@@ -12,7 +15,7 @@ export default function Table() {
         <input
           type="number"
           min="1"
-          max={state.length.toString()}
+          max={sortedByLikes.length.toString()}
           className="input-number"
           value={number.toString()}
           onChange={(e) => {
@@ -21,27 +24,33 @@ export default function Table() {
         />
       </h2>
       <table id="tbody">
-        <tr>
-          <th>Proyecto</th>
-          <th style={{ textAlign: "center" }}>Likes</th>
-          <th style={{ textAlign: "center" }}>Tema</th>
-        </tr>
-        {state.slice(0, number).map((record:idea) => {
-          return (
-            <tr>
-              <td>{record.title}</td>
-              <td style={{ textAlign: "center" }}>{record.likes}</td>
-              <td style={{ textAlign: "center" }}>
-                {" "}
-                {record.tags.length === 0
-                  ? ""
-                  : record.tags.length > 1
-                  ? record.tags.map((tag) => <span>#{tag}, </span>)
-                  : record.tags.map((tag) => <span>#{tag} </span>)}
-              </td>
-            </tr>
-          );
-        })}
+        <tbody>
+          <tr>
+            <th>Proyecto</th>
+            <th style={{ textAlign: "center" }}>Likes</th>
+            <th style={{ textAlign: "center" }}>Tema</th>
+          </tr>
+          {sortedByLikes.slice(0, number).map((record: idea, index: number) => {
+            return (
+              <tr key={index}>
+                <td>{record.title}</td>
+                <td style={{ textAlign: "center" }}>{record.likes}</td>
+                <td style={{ textAlign: "center" }}>
+                  {" "}
+                  {record.tags.length === 0
+                    ? ""
+                    : record.tags.length > 1
+                    ? record.tags.map((tag, index) => (
+                        <span key={index}>#{tag}, </span>
+                      ))
+                    : record.tags.map((tag, index) => (
+                        <span key={index}>#{tag} </span>
+                      ))}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
     </div>
   );
