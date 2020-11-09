@@ -65,6 +65,7 @@ export const LABELS = {
   bancos: "economía",
   ahorristas: "economía",
   dólares: "economía",
+  financieros: "economía",
   inclusíon: "inclusíon",
   "inclusíon social": "inclusíon",
   trans: "inclusíon",

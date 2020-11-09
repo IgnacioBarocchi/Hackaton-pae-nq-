@@ -23,8 +23,8 @@ export default function Table(props) {
       <table id="tbody">
         <tr>
           <th>Proyecto</th>
-          <th>Likes</th>
-          <th>Tag</th>
+          <th style={{ textAlign: "center" }}>Likes</th>
+          <th style={{ textAlign: "center" }}>Tema</th>
         </tr>
         {db.slice(0, number).map((record) => {
           return (
@@ -35,9 +35,9 @@ export default function Table(props) {
                 {" "}
                 {record.tags.length === 0
                   ? ""
-                  : record.tags.map((tag) => (
-                      <span className="tag-span">#{tag}</span>
-                    ))}
+                  : record.tags.length > 1
+                  ? record.tags.map((tag) => <span>#{tag}, </span>)
+                  : record.tags.map((tag) => <span>#{tag} </span>)}
               </td>
             </tr>
           );

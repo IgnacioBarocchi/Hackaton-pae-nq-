@@ -3,11 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from "./data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App i={COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE} />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
