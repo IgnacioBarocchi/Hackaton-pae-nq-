@@ -3,7 +3,6 @@ import type { idea } from "../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE";
 import { sortedByLikes } from "../reducer/dataBaseReducer";
 
 export default function Table() {
-  // const { state } = useContext(DataBaseContext);
   const [number, setNumber] = useState(5);
 
   if (!sortedByLikes) return <h3>Cargando...</h3>;

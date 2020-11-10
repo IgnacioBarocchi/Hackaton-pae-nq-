@@ -20,7 +20,9 @@ html {
   align-items: center;
   justify-content: center;
 }
-
+.fav {
+  background-color: #fb8261;
+}
 .menu-list,
 menu {
   display: flex;

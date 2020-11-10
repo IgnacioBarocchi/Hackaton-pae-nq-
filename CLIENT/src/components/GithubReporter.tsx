@@ -7,9 +7,11 @@ export default function GithubReporter() {
   });
   //@ts-ignore
 
-  const branchMaster = JSON.parse(localStorage.getItem("GitHub-repo")).branch0;
-  const { author, committedDate, message, oid } = branchMaster.commits[0];
-  console.log(branchMaster);
+  const breanches = JSON.parse(localStorage.getItem("GitHub-repo"));
+  if (!breanches) return <h3>Cargando...</h3>;
+
+  const { author, committedDate, message, oid } = breanches.branch0.commits[0];
+
   return (
     <div className="box box-content">
       <div>
