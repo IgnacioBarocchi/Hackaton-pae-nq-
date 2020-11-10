@@ -36,19 +36,21 @@ export const dataBaseReducer = (
 
   switch (action.type) {
     case UPDATE_ITEM:
+      console.info(favouriteRecordUpdater([...state], id));
       return favouriteRecordUpdater([...state], id);
+
     case SORTED_BY_LIKES:
       return sortByLikes(mutalbleCollection);
     case SORTED_BY_TAG_ECOLOGIA:
-      return sortByTag('ecología', sortedByLikes);
+      return sortByTag('ecología', sortedByLikes || [...state]);
     case SORTED_BY_TAG_MEDICINA:
-      return sortByTag('medicina', sortedByLikes);
+      return sortByTag('medicina', sortedByLikes || [...state]);
     case SORTED_BY_TAG_TRANSPORTE:
-      return sortByTag('transporte', sortedByLikes);
+      return sortByTag('transporte', sortedByLikes || [...state]);
     case SORTED_BY_TAG_INCLUSION:
-      return sortByTag('inclusión', sortedByLikes);
+      return sortByTag('inclusión', sortedByLikes || [...state]);
     case SORTED_BY_TAG_ECONOMIA:
-      return sortByTag('economía', sortedByLikes);
+      return sortByTag('economía', sortedByLikes || [...state]);
     case SORTED_BY_TIME:
       return initialDataBase;
     default:

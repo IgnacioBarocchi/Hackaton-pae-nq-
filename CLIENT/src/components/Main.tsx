@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Ul from './Ul';
 import Table from './Table';
 import Chart_ from './Chart';
-import GithubReporter from './GithubReporter';
+// import GithubReporter from './GithubReporter';
 import { DataBaseContext } from '../App';
 
 export default function Main() {
@@ -11,7 +11,6 @@ export default function Main() {
   if (!state) {
     return <h3>Cargando...</h3>;
   }
-
   const handleToggleFavourite = (id: number) => {
     dispatch({ type: 'UPDATE_ITEM', payload: id });
   };
