@@ -1,6 +1,6 @@
-import './App.css';
-import './style.css';
-import './fonts.css';
+import './style/App.css';
+import './style/style.css';
+import './style/fonts.css';
 import React, {
   useEffect,
   createContext,
