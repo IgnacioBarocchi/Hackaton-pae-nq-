@@ -1,15 +1,22 @@
-import type { idea } from "../utils/types";
-import { LABELS } from "../utils/labels";
+import type { idea } from '../utils/types';
+import { LABELS } from '../utils/labels';
 
 const normalize = (text: string): string => {
-  return text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+  return text
+    .toLowerCase()
+    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '');
 };
 
 export const labelThisDocument = (record: idea) => {
   const keywords: string[] = Object.keys(LABELS);
   for (const keyword of keywords) {
-    const description: string[] = normalize(record.description).split(" ");
-    if (description.includes(keyword) && !record.tags.includes(keyword)) {
+    const description: string[] = normalize(record.description).split(
+      ' '
+    );
+    if (
+      description.includes(keyword) &&
+      !record.tags.includes(keyword)
+    ) {
       //@ts-ignore
       record.tags.push(LABELS[keyword]);
     }

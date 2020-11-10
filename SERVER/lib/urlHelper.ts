@@ -1,11 +1,12 @@
-import { COLLECTION } from "../data/TITLE_AND_IDEA_ID";
-const MAIN_PATH = "https://ar.socialab.com/challenges/hackatonpaenqn/idea/";
+import { COLLECTION } from '../data/TITLE_AND_IDEA_ID';
+const MAIN_PATH =
+  'https://ar.socialab.com/challenges/hackatonpaenqn/idea/';
 
 export const websiteExist = (title: string): boolean => {
   if (
-    title === "404 error!" ||
-    title === "These are our Challenges" ||
-    title === "Estas son nuestras convocatorias"
+    title === '404 error!' ||
+    title === 'These are our Challenges' ||
+    title === 'Estas son nuestras convocatorias'
   ) {
     return false; // Not such a website found!
   }
@@ -16,7 +17,7 @@ export const getUrls = () => {
   let urls: string[] = [];
   COLLECTION.forEach((record) => {
     for (const property in record) {
-      if (property === "idea") {
+      if (property === 'idea') {
         urls.push(`${MAIN_PATH}${record[property]}`);
       }
     }

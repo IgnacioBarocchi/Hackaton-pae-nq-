@@ -19,6 +19,7 @@
 > - `likes: int,`
 > - `postedBy: string,`
 > - `imageUrl: string,`
+> - `boolVal: boolean,`
 > - `tags: string[],` _(en caso de no contar con los tags se etiquetarán con un algoritmo)_
 > - `sentiment:{ score: number; comparative: number; vote: string; numWords: number; numHits: number; type: string; language: string;},`
 > - `source/url: string,`
@@ -54,7 +55,7 @@ export const labelThisDocument = (record: idea) => {
 
 #### 2. Hacer un api para comprimir las imágenes obtenidas y subirlas a cloudinary.
 
-#### 3. Migrar el front a react basado en funciones. Hacer el responsive design.
+#### 3. ~~Migrar el front a react basado en funciones.~~ Hacer el responsive design.
 
 ```TypeScript
 // renderer.ts
@@ -116,6 +117,7 @@ getTop();
 
 #### 6. Hacer muchas apis (pensar mucho). La api de update de la base de datos me va a costar un montón hacerla mmmm. Hay que saber cuáles son los hackatones sujetos a cambios en momento en el que el cliente usar la página.
 
+... Hacer scripts para el deployment con github actions
 ... Crear un `procfile` para TypeScript y subir el backend a Heroku.
 ... El cliente debe poder:
 

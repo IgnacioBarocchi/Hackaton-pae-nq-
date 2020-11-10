@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { DataBaseContext } from "../App";
+import React, { useContext } from 'react';
+import { DataBaseContext } from '../App';
 
 export default function Nav() {
   const { dispatch, state } = useContext(DataBaseContext);
@@ -9,7 +9,9 @@ export default function Nav() {
         <ul className="menu-list">
           <li className="menu-item">
             <button className="btn refresh">
-              <span style={{ color: "blue" }}>Actualizar Resultados</span>
+              <span style={{ color: 'blue' }}>
+                Actualizar Resultados
+              </span>
             </button>
             |
           </li>
@@ -24,7 +26,7 @@ export default function Nav() {
               className="btn"
               id="most-liked"
               onClick={() => {
-                dispatch({ type: "SORTED_BY_LIKES", payload: state });
+                dispatch({ type: 'SORTED_BY_LIKES', payload: state });
               }}
             >
               Cantidad de likes
@@ -36,7 +38,10 @@ export default function Nav() {
               className="btn"
               id="ecología"
               onClick={() => {
-                dispatch({ type: "SORTERED_BY_TAG_ECOLOGIA", payload: state });
+                dispatch({
+                  type: 'SORTERED_BY_TAG_ECOLOGIA',
+                  payload: state,
+                });
               }}
             >
               #Ecología
@@ -48,7 +53,10 @@ export default function Nav() {
               className="btn"
               id="medicina"
               onClick={() => {
-                dispatch({ type: "SORTERED_BY_TAG_MEDICINA", payload: state });
+                dispatch({
+                  type: 'SORTERED_BY_TAG_MEDICINA',
+                  payload: state,
+                });
               }}
             >
               #Medicina
@@ -61,7 +69,7 @@ export default function Nav() {
               id="transporte"
               onClick={() => {
                 dispatch({
-                  type: "SORTERED_BY_TAG_TRANSPORTE",
+                  type: 'SORTERED_BY_TAG_TRANSPORTE',
                   payload: state,
                 });
               }}
@@ -75,7 +83,10 @@ export default function Nav() {
               className="btn"
               id="inclusión"
               onClick={() => {
-                dispatch({ type: "SORTERED_BY_TAG_INCLUSION", payload: state });
+                dispatch({
+                  type: 'SORTERED_BY_TAG_INCLUSION',
+                  payload: state,
+                });
               }}
             >
               #Inclusión
@@ -87,7 +98,10 @@ export default function Nav() {
               className="btn"
               id="economía"
               onClick={() => {
-                dispatch({ type: "SORTERED_BY_TAG_ECONOMIA", payload: state });
+                dispatch({
+                  type: 'SORTERED_BY_TAG_ECONOMIA',
+                  payload: state,
+                });
               }}
             >
               #Economía
