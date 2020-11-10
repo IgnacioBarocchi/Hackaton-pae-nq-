@@ -3,6 +3,7 @@ import { DataBaseContext } from '../App';
 
 export default function Nav() {
   const { dispatch, state } = useContext(DataBaseContext);
+
   return (
     <nav className="nav">
       <div className="menu">
@@ -12,11 +13,20 @@ export default function Nav() {
               <span style={{ color: 'blue' }}>
                 Actualizar Resultados
               </span>
+              {/* void */}
             </button>
             |
           </li>
           <li className="menu-item">
-            <button className="btn" id="most-recent">
+            <button
+              className="btn"
+              id="most-recent"
+              onClick={() => {
+                dispatch({
+                  type: 'SORTED_BY_TIME',
+                });
+              }}
+            >
               Más reciente
             </button>
             |
@@ -39,7 +49,7 @@ export default function Nav() {
               id="ecología"
               onClick={() => {
                 dispatch({
-                  type: 'SORTERED_BY_TAG_ECOLOGIA',
+                  type: 'SORTED_BY_TAG_ECOLOGIA',
                   payload: state,
                 });
               }}
@@ -54,7 +64,7 @@ export default function Nav() {
               id="medicina"
               onClick={() => {
                 dispatch({
-                  type: 'SORTERED_BY_TAG_MEDICINA',
+                  type: 'SORTED_BY_TAG_MEDICINA',
                   payload: state,
                 });
               }}
@@ -69,7 +79,7 @@ export default function Nav() {
               id="transporte"
               onClick={() => {
                 dispatch({
-                  type: 'SORTERED_BY_TAG_TRANSPORTE',
+                  type: 'SORTED_BY_TAG_TRANSPORTE',
                   payload: state,
                 });
               }}
@@ -84,7 +94,7 @@ export default function Nav() {
               id="inclusión"
               onClick={() => {
                 dispatch({
-                  type: 'SORTERED_BY_TAG_INCLUSION',
+                  type: 'SORTED_BY_TAG_INCLUSION',
                   payload: state,
                 });
               }}
@@ -99,7 +109,7 @@ export default function Nav() {
               id="economía"
               onClick={() => {
                 dispatch({
-                  type: 'SORTERED_BY_TAG_ECONOMIA',
+                  type: 'SORTED_BY_TAG_ECONOMIA',
                   payload: state,
                 });
               }}

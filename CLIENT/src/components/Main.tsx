@@ -1,36 +1,27 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Ul from './Ul';
 import Table from './Table';
 import Chart_ from './Chart';
 import GithubReporter from './GithubReporter';
-import { initialDataBase } from '../reducer/dataBaseReducer';
+import { DataBaseContext } from '../App';
 
 export default function Main() {
-  const [dataBase, setdataBase] = useState(initialDataBase);
+  const { dispatch, state } = useContext(DataBaseContext);
 
-  function handleToggleFavourite(id: number) {
-    const newDataBase = dataBase.map((item) => {
-      if (item.id === id) {
-        const updatedItem = {
-          ...item,
-          boolVal: !item.boolVal,
-        };
-
-        return updatedItem;
-      }
-
-      return item;
-    });
-    //@ts-ignore
-    setdataBase(newDataBase);
-    console.log(dataBase);
+  if (!state) {
+    return <h3>Cargando...</h3>;
   }
+
+  const handleToggleFavourite = (id: number) => {
+    dispatch({ type: 'UPDATE_ITEM', payload: id });
+  };
+
   return (
     <main className="main-content">
       <div className="left">
         <div id="ideas">
           <Ul
-            dataBase={dataBase}
+            dataBase={state}
             onToggleFavourite={handleToggleFavourite}
           />
         </div>
@@ -40,7 +31,7 @@ export default function Main() {
           <h3 id="date"></h3>
           <Table />
           <Chart_ />
-          <GithubReporter />
+          {/* <GithubReporter /> */}
         </section>
       </div>
     </main>

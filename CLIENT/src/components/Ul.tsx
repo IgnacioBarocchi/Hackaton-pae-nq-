@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
-import { DataBaseContext } from '../App';
+import React from 'react';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 //@ts-ignore
 export default function Ul({ dataBase, onToggleFavourite }) {
-  const { state } = useContext(DataBaseContext);
-  if (!state) return <h3>Cargando...</h3>;
   return (
     <ul id="#project-list">
       {dataBase.map((record: idea, index: number) => (
@@ -69,7 +66,7 @@ export default function Ul({ dataBase, onToggleFavourite }) {
                 <a href={record.source}>
                   {record.source.replace(
                     'https://ar.socialab.com/challenges',
-                    ''
+                    ``
                   )}
                 </a>
               </p>

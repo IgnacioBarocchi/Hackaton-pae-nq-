@@ -4,7 +4,7 @@ export type idea = {
   description: string;
   likes: string;
   source: string;
-  boolVal: false;
+  boolVal: boolean;
   tags: string[];
 };
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
-import { sortedByLikes } from '../reducer/dataBaseReducer';
+import { sortByLikes } from '../helpers/dbSorters';
+import { initialDataBase } from '../reducer/dataBaseReducer';
+const sortedByLikes = sortByLikes(initialDataBase);
 
 export default function Table() {
   const [number, setNumber] = useState(5);
