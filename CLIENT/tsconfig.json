@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -13,8 +12,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+
+    "target": "es6",
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src"]
+  "include": ["src", "tests/App.test.js", "tests/App.test.js"],
+  "exclude": ["node_modules", "dev_server.js"]
 }

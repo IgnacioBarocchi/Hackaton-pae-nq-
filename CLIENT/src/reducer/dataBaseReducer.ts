@@ -1,12 +1,18 @@
-import { sortByLikes, sortByTag } from '../helpers/dbSorters';
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { favouriteRecordUpdater } from '../helpers/favouriteRecordUpdater';
 import { isId, isIterable } from '../helpers/payloadValidator';
-import { ACTIONS } from './actions';
+import { ACTIONS } from './utils/actions';
+import {
+  ecologia,
+  medicina,
+  transporte,
+  inclusion,
+  economia,
+  likes,
+} from './utils/functions';
 
 export const initialDataBase = COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE;
-export const sortedByLikes = sortByLikes([...initialDataBase]);
 
 const {
   UPDATE_ITEM,
@@ -23,36 +29,27 @@ export const dataBaseReducer = (
   state: idea[],
   action: { type: string; payload: any }
 ) => {
-  let mutalbleCollection;
-  let id;
-
-  if (state) {
-    if (isIterable(action.payload)) {
-      mutalbleCollection = [...action.payload];
-    } else if (isId(action.payload?.id)) {
-      id = action.payload?.id;
-    }
+  if (!isIterable(action.payload) && isId(action.payload?.id)) {
+    var id = action.payload?.id;
   }
 
   switch (action.type) {
     case UPDATE_ITEM:
-      console.info(favouriteRecordUpdater([...state], id));
       return favouriteRecordUpdater([...state], id);
-
     case SORTED_BY_LIKES:
-      return sortByLikes(mutalbleCollection);
+      return likes([...state]);
     case SORTED_BY_TAG_ECOLOGIA:
-      return sortByTag('ecología', sortedByLikes || [...state]);
+      return ecologia([...state]);
     case SORTED_BY_TAG_MEDICINA:
-      return sortByTag('medicina', sortedByLikes || [...state]);
+      return medicina([...state]);
     case SORTED_BY_TAG_TRANSPORTE:
-      return sortByTag('transporte', sortedByLikes || [...state]);
+      return transporte([...state]);
     case SORTED_BY_TAG_INCLUSION:
-      return sortByTag('inclusión', sortedByLikes || [...state]);
+      return inclusion([...state]);
     case SORTED_BY_TAG_ECONOMIA:
-      return sortByTag('economía', sortedByLikes || [...state]);
+      return economia([...state]);
     case SORTED_BY_TIME:
-      return initialDataBase;
+      return COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE;
     default:
       throw new Error();
   }

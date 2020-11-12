@@ -1,6 +1,6 @@
-const client = require("github-graphql-client");
-const owner = "IgnacioBarocchi";
-const repo = "Hackaton-pae-nq-";
+const client = require('github-graphql-client');
+const owner = 'IgnacioBarocchi';
+const repo = 'Hackaton-pae-nq-';
 const branchQuery = `
 query($owner:String!, $name:String!, $branchCursor: String!) {
   repository(owner: $owner, name: $name) {
@@ -77,7 +77,7 @@ function doRequest(query, variables) {
   return new Promise(function (resolve, reject) {
     client(
       {
-        token: import("./utils/key"),
+        token: import('./utils/key'),
         query: query,
         variables: variables,
       },
@@ -98,7 +98,7 @@ function buildBranchObject(branch) {
 
   for (var i = 0; i < branch.length; i++) {
     // console.log("branch " + branch[i].node.name);
-    refs["branch" + i] = {
+    refs['branch' + i] = {
       name: branch[i].node.name,
       totalCount: branch[i].node.target.history.totalCount,
       cursor: null,
@@ -112,7 +112,7 @@ function buildBranchObject(branch) {
 export async function requestGraphql() {
   var iterateBranch = true;
   var branches = [];
-  var cursor = "";
+  var cursor = '';
 
   // get all branches
   while (iterateBranch) {
@@ -152,13 +152,17 @@ export async function requestGraphql() {
       });
       hasNextPage = false;
       for (var key in refs) {
-        if (refs.hasOwnProperty(key) && commitResult.data.repository[key]) {
+        if (
+          refs.hasOwnProperty(key) &&
+          commitResult.data.repository[key]
+        ) {
           // isEmpty = false;
-          let history = commitResult.data.repository[key].target.history;
+          let history =
+            commitResult.data.repository[key].target.history;
           refs[key].commits = refs[key].commits.concat(history.nodes);
           refs[key].cursor = history.pageInfo.hasNextPage
             ? history.pageInfo.endCursor
-            : "";
+            : '';
           refs[key].hasNextPage = history.pageInfo.hasNextPage;
           // ref
           /*
@@ -200,5 +204,5 @@ export async function requestGraphql() {
   }
   // return
   // localStorage.setItem('gh',"commits" + j + ".json", JSON.stringify(refs, null, 4), "utf8")
-  localStorage.setItem("GitHub-repo", JSON.stringify(refs));
+  localStorage.setItem('GitHub-repo', JSON.stringify(refs));
 }

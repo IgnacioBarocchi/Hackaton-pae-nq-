@@ -3,7 +3,7 @@ import { DataBaseContext } from '../App';
 
 export default function Nav() {
   const { dispatch, state } = useContext(DataBaseContext);
-
+  console.info(state);
   return (
     <nav className="nav">
       <div className="menu">

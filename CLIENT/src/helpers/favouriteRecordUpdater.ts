@@ -1,4 +1,4 @@
-import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 export const favouriteRecordUpdater = (
   array: any,
