@@ -2,7 +2,7 @@ import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../../data/COLLECTION_OF
 import type { idea } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { favouriteRecordUpdater } from '../../helpers/favouriteRecordUpdater';
 import { isId, isIterable } from '../../helpers/payloadValidator';
-import { ACTIONS } from '../actions/actions';
+import { ACTIONS } from '../actions/actionsTypes';
 import {
   ecologia,
   medicina,
@@ -51,6 +51,7 @@ export const ideasReducer = (
     case SORTED_BY_TIME:
       return COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE;
     default:
-      throw new Error();
+      // throw new Error();
+      initialDataBase;
   }
 };

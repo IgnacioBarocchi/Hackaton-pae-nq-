@@ -1,6 +1,7 @@
 import './style/App.css';
 import './style/style.css';
 import './style/fonts.css';
+import store from './redux/store';
 import React, { createContext, useReducer } from 'react';
 import Nav from './components/Nav';
 import Main from './components/Main';
