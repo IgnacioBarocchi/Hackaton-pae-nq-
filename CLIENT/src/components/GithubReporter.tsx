@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { requestGraphql } from '../helpers/GithubReport';
+import { requestGraphql } from '../helpers/GithubReporterHelper';
 
 export default function GithubReporter() {
   useEffect(() => {
@@ -7,15 +7,15 @@ export default function GithubReporter() {
   });
   //@ts-ignore
 
-  const breanches = JSON.parse(localStorage.getItem('GitHub-repo'));
-  if (!breanches) return <h3>Cargando...</h3>;
+  const branches = JSON.parse(localStorage.getItem('GitHub-repo'));
+  if (!branches) return <h3>Cargando...</h3>;
 
   const {
     author,
     committedDate,
     message,
     oid,
-  } = breanches.branch0.commits[0];
+  } = branches.branch0.commits[0];
 
   return (
     <div className="box box-content">
