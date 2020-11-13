@@ -1,8 +1,8 @@
-import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
-import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
-import { favouriteRecordUpdater } from '../helpers/favouriteRecordUpdater';
-import { isId, isIterable } from '../helpers/payloadValidator';
-import { ACTIONS } from './utils/actions';
+import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import type { idea } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import { favouriteRecordUpdater } from '../../helpers/favouriteRecordUpdater';
+import { isId, isIterable } from '../../helpers/payloadValidator';
+import { ACTIONS } from '../actions/actions';
 import {
   ecologia,
   medicina,
@@ -10,7 +10,7 @@ import {
   inclusion,
   economia,
   likes,
-} from './utils/functions';
+} from '../helpers/functions';
 
 export const initialDataBase = COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE;
 
@@ -25,7 +25,7 @@ const {
   SORTED_BY_TIME,
 } = ACTIONS;
 
-export const dataBaseReducer = (
+export const ideasReducer = (
   state: idea[],
   action: { type: string; payload: any }
 ) => {

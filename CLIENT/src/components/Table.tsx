@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { sortByLikes } from '../helpers/dbSorters';
-import { initialDataBase } from '../reducer/dataBaseReducer';
+import { initialDataBase } from '../redux/reducer/ideasReducer';
 const sortedByLikes = sortByLikes(initialDataBase);
 
 export default function Table() {

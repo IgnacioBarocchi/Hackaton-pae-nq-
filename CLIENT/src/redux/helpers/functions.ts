@@ -1,5 +1,5 @@
 import { sortByLikes, sortByTag } from '../../helpers/dbSorters';
-import { initialDataBase } from '../dataBaseReducer';
+import { initialDataBase } from '../reducer/ideasReducer';
 
 export const likes = (array = [...initialDataBase]) =>
   sortByLikes(array);
