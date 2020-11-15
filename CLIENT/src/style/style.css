@@ -5,25 +5,7 @@ html {
   background-color: #f6f8fa;
 }
 
-.nav {
-  z-index: 2;
-  position: fixed;
-  display: flex;
-  width: 100%;
-  max-height: 3em;
-  background-color: white;
-  padding: 5px;
-  margin: 0;
-  border-top: 3px solid #d1d5da;
-  color: #24292e;
-  border-bottom: 1px solid #d1d5da;
-  align-items: center;
-  justify-content: center;
-}
-.fav {
-  background-color: #fb8261;
-}
-.menu-list,
+/* .menu-list,
 menu {
   display: flex;
   flex-direction: row;
@@ -40,11 +22,7 @@ menu {
 
 .menu-item {
   margin: 0;
-}
-
-ul {
-  list-style: none;
-}
+} */
 
 .main-content {
   display: flex;
@@ -56,14 +34,6 @@ ul {
 .right {
   margin-top: 70px;
   width: 50%;
-}
-
-.btn {
-  cursor: pointer;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  padding: 0;
 }
 
 .box {
@@ -101,15 +71,6 @@ ul {
   transition: 1s;
   /* opacity: 0.8; */
 }
-.icon-container {
-  font-size: '20px';
-  padding: '2px';
-  border-radius: '50%';
-  width: '2em';
-  height: '2em';
-  color: 'gray';
-  outline: 'none';
-}
 
 .card-title {
   padding: 0 10px;
@@ -119,6 +80,7 @@ ul {
   justify-content: 'space-between';
   align-items: 'baseline';
 }
+
 .app-list-element:nth-child(even) > div > header {
   background-color: #f6f8fa;
 }
@@ -178,8 +140,4 @@ tr:nth-child(even) {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-}
-
-.heart-icon {
-  color: Crimson;
 }

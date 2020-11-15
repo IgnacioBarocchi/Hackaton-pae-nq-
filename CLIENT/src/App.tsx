@@ -16,12 +16,12 @@ function App(): JSX.Element {
   // const [state, dispatch] = useReducer(ideasReducer, initialDataBase);
 
   return (
-    <>
-      {/* <DataBaseContext.Provider value={{ state, dispatch }}> */}
-      <Nav />
-      <Main />
-      {/* </DataBaseContext.Provider> */}
-    </>
+      <>
+          {/* <DataBaseContext.Provider value={{ state, dispatch }}> */}
+          <Nav />
+          <Main />
+          {/* </DataBaseContext.Provider> */}
+      </>
   );
 }
 

@@ -15,22 +15,22 @@ export default function GithubReporter() {
     committedDate,
     message,
     oid,
-  } = branches.branch0.commits[0];
+  } = branches.branch0.commits[ 0 ];
 
   return (
-    <div className="box box-content">
-      <div>
-        <strong>Author: </strong> {author.name}
-        <strong> Fecha: </strong> {committedDate}
+      <div className="box box-content">
+          <div>
+              <strong>Author: </strong> {author.name}
+              <strong> Fecha: </strong> {committedDate}
+          </div>
+          <div>
+              <strong> Commit Message: </strong>
+              <span style={ { color: '#11a8cd' } }>{message}</span>
+              <strong> Hash: </strong>
+              <pre style={ { fontSize: '16px', color: '#0dbc79' } }>
+                  {oid}
+              </pre>
+          </div>
       </div>
-      <div>
-        <strong> Commit Message: </strong>
-        <span style={{ color: '#11a8cd' }}>{message}</span>
-        <strong> Hash: </strong>
-        <pre style={{ fontSize: '16px', color: '#0dbc79' }}>
-          {oid}
-        </pre>
-      </div>
-    </div>
   );
 }

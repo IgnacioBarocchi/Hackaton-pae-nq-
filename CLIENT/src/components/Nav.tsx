@@ -10,7 +10,13 @@ import {
   sortByEconomia_action,
 } from '../store/actions/actions';
 import store from '../store/store';
-
+import {
+  MenuWrapper,
+  StyledButton,
+  StyledLi,
+  StyledNavigation,
+  StyledUl,
+} from '../style/styled';
 interface RootState {
   isOn: boolean;
 }
@@ -28,110 +34,99 @@ const mapDispatch = {
   sortByInclusion_action,
   sortByEconomia_action,
 };
-
 const connector = connect(mapState, mapDispatch);
 
 function Nav() {
   const state = useSelector((state) => state);
   return (
-    <nav className="nav">
-      <div className="menu">
-        <ul className="menu-list">
-          <li className="menu-item">
-            <button className="btn refresh">
-              <span style={{ color: 'blue' }}>
-                Actualizar Resultados
-              </span>
-              {/* void */}
-            </button>
-            |
-          </li>
-          <li className="men-item">
-            <button
-              className="btn"
+      <StyledNavigation>
+          <MenuWrapper>
+              <StyledUl>
+                  <StyledLi>
+                      <StyledButton className="refresh">
+                          Actualizar Resultados
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="most-recent"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByTime_action(state));
-              }}
+              } }
             >
-              Más reciente
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          Más reciente
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="most-liked"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByLikes_action(state));
-              }}
+              } }
             >
-              Cantidad de likes
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          Cantidad de likes
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="ecología"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByEcologia_action(state));
-              }}
+              } }
             >
-              #Ecología
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          #Ecología
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="medicina"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByMedicina_action(state));
-              }}
+              } }
             >
-              #Medicina
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          #Medicina
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="transporte"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByTransporte_action(state));
-              }}
+              } }
             >
-              #Transporte
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          #Transporte
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="inclusión"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByInclusion_action(state));
-              }}
+              } }
             >
-              #Inclusión
-            </button>
-            |
-          </li>
-          <li className="menu-item">
-            <button
-              className="btn"
+                          #Inclusión
+                      </StyledButton>
+                      |
+                  </StyledLi>
+                  <StyledLi>
+                      <StyledButton
               id="economía"
-              onClick={() => {
+              onClick={ () => {
                 store.dispatch(sortByEconomia_action(state));
-              }}
+              } }
             >
-              #Economía
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+                          #Economía
+                      </StyledButton>
+                  </StyledLi>
+              </StyledUl>
+          </MenuWrapper>
+      </StyledNavigation>
   );
 }
 
