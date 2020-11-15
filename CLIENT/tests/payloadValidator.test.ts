@@ -1,4 +1,7 @@
-import { isIterable, isId } from '../src/helpers/payloadValidator';
+import {
+  isIterable,
+  isId,
+} from '../src/store/helpers/payloadValidator';
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../src/data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 //@ts-ignore

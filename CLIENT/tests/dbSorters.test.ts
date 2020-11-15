@@ -1,5 +1,5 @@
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../src/data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
-import { sortByLikes } from '../src/helpers/dbSorters';
+import { sortByLikes } from '../src/store/helpers/dbSorters';
 //@ts-ignore
 
 describe('Mustation', () => {

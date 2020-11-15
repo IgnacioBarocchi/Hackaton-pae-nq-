@@ -4,11 +4,6 @@ export function isIterable(obj: any) {
   }
   return typeof obj[Symbol.iterator] === 'function';
 }
-/*
-export const isIterable = (payload: any): boolean => {
-  return Symbol.iterator in Object(payload);
-};
-*/
 
 export const isId = (payload: any) => {
   if (isNaN(payload)) return false;

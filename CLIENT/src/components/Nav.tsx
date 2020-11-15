@@ -1,9 +1,38 @@
-import React, { useContext } from 'react';
-import { DataBaseContext } from '../App';
+import React from 'react';
+import { connect, useSelector } from 'react-redux';
+import {
+  sortByLikes_action,
+  sortByEcologia_action,
+  sortByMedicina_action,
+  sortByTransporte_action,
+  sortByTime_action,
+  sortByInclusion_action,
+  sortByEconomia_action,
+} from '../store/actions/actions';
+import store from '../store/store';
 
-export default function Nav() {
-  const { dispatch, state } = useContext(DataBaseContext);
-  console.info(state);
+interface RootState {
+  isOn: boolean;
+}
+
+const mapState = (state: RootState) => {
+  return { ...state };
+};
+
+const mapDispatch = {
+  sortByLikes_action,
+  sortByEcologia_action,
+  sortByMedicina_action,
+  sortByTransporte_action,
+  sortByTime_action,
+  sortByInclusion_action,
+  sortByEconomia_action,
+};
+
+const connector = connect(mapState, mapDispatch);
+
+function Nav() {
+  const state = useSelector((state) => state);
   return (
     <nav className="nav">
       <div className="menu">
@@ -17,14 +46,12 @@ export default function Nav() {
             </button>
             |
           </li>
-          <li className="menu-item">
+          <li className="men-item">
             <button
               className="btn"
               id="most-recent"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TIME',
-                });
+                store.dispatch(sortByTime_action(state));
               }}
             >
               Más reciente
@@ -36,7 +63,7 @@ export default function Nav() {
               className="btn"
               id="most-liked"
               onClick={() => {
-                dispatch({ type: 'SORTED_BY_LIKES', payload: state });
+                store.dispatch(sortByLikes_action(state));
               }}
             >
               Cantidad de likes
@@ -48,10 +75,7 @@ export default function Nav() {
               className="btn"
               id="ecología"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TAG_ECOLOGIA',
-                  payload: state,
-                });
+                store.dispatch(sortByEcologia_action(state));
               }}
             >
               #Ecología
@@ -63,10 +87,7 @@ export default function Nav() {
               className="btn"
               id="medicina"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TAG_MEDICINA',
-                  payload: state,
-                });
+                store.dispatch(sortByMedicina_action(state));
               }}
             >
               #Medicina
@@ -78,10 +99,7 @@ export default function Nav() {
               className="btn"
               id="transporte"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TAG_TRANSPORTE',
-                  payload: state,
-                });
+                store.dispatch(sortByTransporte_action(state));
               }}
             >
               #Transporte
@@ -93,10 +111,7 @@ export default function Nav() {
               className="btn"
               id="inclusión"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TAG_INCLUSION',
-                  payload: state,
-                });
+                store.dispatch(sortByInclusion_action(state));
               }}
             >
               #Inclusión
@@ -108,10 +123,7 @@ export default function Nav() {
               className="btn"
               id="economía"
               onClick={() => {
-                dispatch({
-                  type: 'SORTED_BY_TAG_ECONOMIA',
-                  payload: state,
-                });
+                store.dispatch(sortByEconomia_action(state));
               }}
             >
               #Economía
@@ -122,3 +134,5 @@ export default function Nav() {
     </nav>
   );
 }
+
+export default connector(Nav);

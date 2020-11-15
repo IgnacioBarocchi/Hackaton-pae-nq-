@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
-import { sortByLikes } from '../helpers/dbSorters';
-import { initialDataBase } from '../redux/reducer/ideasReducer';
-const sortedByLikes = sortByLikes(initialDataBase);
+import { sortByLikes } from '../store/helpers/dbSorters';
 
 export default function Table() {
+  // The contex
+  const state = useSelector((state) => state);
   const [number, setNumber] = useState(5);
 
-  if (!sortedByLikes) return <h3>Cargando...</h3>;
+  if (!sortByLikes) return <h3>Cargando...</h3>;
 
   return (
     <div id="top-10" className="box big box-content">
@@ -16,7 +17,9 @@ export default function Table() {
         <input
           type="number"
           min="1"
-          max={sortedByLikes.length.toString()}
+          // Todo: Convert this to an action
+          // @ts-ignore
+          max={sortByLikes([...state]).length.toString()}
           className="input-number"
           value={number.toString()}
           onChange={(e) => {
@@ -31,30 +34,35 @@ export default function Table() {
             <th style={{ textAlign: 'center' }}>Likes</th>
             <th style={{ textAlign: 'center' }}>Tema</th>
           </tr>
-          {sortedByLikes
-            .slice(0, number)
-            .map((record: idea, index: number) => {
-              return (
-                <tr key={index}>
-                  <td>{record.title}</td>
-                  <td style={{ textAlign: 'center' }}>
-                    {record.likes}
-                  </td>
-                  <td style={{ textAlign: 'center' }}>
-                    {' '}
-                    {record.tags.length === 0
-                      ? ''
-                      : record.tags.length > 1
-                      ? record.tags.map((tag, index) => (
-                          <span key={index}>#{tag}, </span>
-                        ))
-                      : record.tags.map((tag, index) => (
-                          <span key={index}>#{tag} </span>
-                        ))}
-                  </td>
-                </tr>
-              );
-            })}
+
+          {
+            // Todo: This should trigger an action
+            // @ts-ignore
+            sortByLikes([...state])
+              .slice(0, number)
+              .map((record: idea, index: number) => {
+                return (
+                  <tr key={index}>
+                    <td>{record.title}</td>
+                    <td style={{ textAlign: 'center' }}>
+                      {record.likes}
+                    </td>
+                    <td style={{ textAlign: 'center' }}>
+                      {' '}
+                      {record.tags.length === 0
+                        ? ''
+                        : record.tags.length > 1
+                        ? record.tags.map((tag, index) => (
+                            <span key={index}>#{tag}, </span>
+                          ))
+                        : record.tags.map((tag, index) => (
+                            <span key={index}>#{tag} </span>
+                          ))}
+                    </td>
+                  </tr>
+                );
+              })
+          }
         </tbody>
       </table>
     </div>

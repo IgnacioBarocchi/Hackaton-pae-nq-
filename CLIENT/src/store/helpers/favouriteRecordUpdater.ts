@@ -1,4 +1,4 @@
-import { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import { idea } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 export const favouriteRecordUpdater = (
   array: any,
@@ -14,3 +14,13 @@ export const favouriteRecordUpdater = (
     }
     return record;
   });
+
+/*
+Using immer
+import { produce } from 'immer';
+produce(array, (draftState: any) => {
+// @ts-ignore
+draftState.record[idOfSelectedItem].boolVal = !draftState.record[
+  idOfSelectedItem
+].boolVal;
+*/

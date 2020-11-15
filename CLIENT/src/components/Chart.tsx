@@ -1,25 +1,25 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useContext } from 'react';
 //@ts-ignore
-import { Chart } from "react-charts";
-import { DataBaseContext } from "../App";
+import { Chart } from 'react-charts';
+import { useSelector } from 'react-redux';
 
 export default function Chart_() {
-  const { state } = useContext(DataBaseContext);
+  // const state = useSelector((state) => state);
   return (
     <div id="chart" className="box big box-content">
       <h2>Temáticas</h2>
       {/* <canvas id="proyectCanvas" width="600" height="200"></canvas> */}
       <div
         style={{
-          width: "400px",
-          height: "300px",
+          width: '400px',
+          height: '300px',
         }}
       >
         <Chart
           data={useMemo(
             () => [
               {
-                label: "Series 1",
+                label: 'Series 1',
                 data: [
                   [0, 1],
                   [1, 2],
@@ -29,7 +29,7 @@ export default function Chart_() {
                 ],
               },
               {
-                label: "Series 2",
+                label: 'Series 2',
                 data: [
                   [0, 3],
                   [1, 1],
@@ -43,8 +43,8 @@ export default function Chart_() {
           )}
           axes={useMemo(
             () => [
-              { primary: true, type: "linear", position: "bottom" },
-              { type: "linear", position: "left" },
+              { primary: true, type: 'linear', position: 'bottom' },
+              { type: 'linear', position: 'left' },
             ],
             []
           )}

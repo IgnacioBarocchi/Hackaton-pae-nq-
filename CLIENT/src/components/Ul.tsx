@@ -1,11 +1,23 @@
 import React from 'react';
-import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import { connect } from 'react-redux';
+import { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
+import { updateItem_action } from '../store/actions/actions';
+import store from '../store/store';
 
-//@ts-ignore
-export default function Ul({ dataBase, onToggleFavourite }) {
+interface RootState {
+  isOn: boolean;
+}
+
+const mapState = (state: RootState) => {
+  return { ...state };
+};
+const mapDispatch = { updateItem_action };
+const connector = connect(mapState, mapDispatch);
+
+function Ul() {
   return (
     <ul id="#project-list">
-      {dataBase.map((record: idea, index: number) => (
+      {store.getState().map((record: idea, index: number) => (
         <li className="app-list-element" key={index}>
           <div className="box card">
             <header
@@ -22,6 +34,7 @@ export default function Ul({ dataBase, onToggleFavourite }) {
               </h3>
               <div>
                 <span
+                  className="icon-container"
                   style={{
                     fontSize: '20px',
                     padding: '2px',
@@ -47,7 +60,9 @@ export default function Ul({ dataBase, onToggleFavourite }) {
                     color: 'gray',
                     outline: 'none',
                   }}
-                  onClick={() => onToggleFavourite(record.id)}
+                  onClick={() =>
+                    store.dispatch(updateItem_action(record.id))
+                  }
                 >
                   {record.boolVal ? '★' : '☆'}
                 </button>
@@ -77,3 +92,5 @@ export default function Ul({ dataBase, onToggleFavourite }) {
     </ul>
   );
 }
+
+export default connector(Ul);

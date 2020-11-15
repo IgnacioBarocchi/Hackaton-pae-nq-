@@ -1,4 +1,4 @@
-import { favouriteRecordUpdater } from '../src/helpers/favouriteRecordUpdater';
+import { favouriteRecordUpdater } from '../src/store/helpers/favouriteRecordUpdater';
 import { COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE } from '../src/data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 const expectedRecord = {

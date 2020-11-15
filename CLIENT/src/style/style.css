@@ -101,13 +101,23 @@ ul {
   transition: 1s;
   /* opacity: 0.8; */
 }
+.icon-container {
+  font-size: '20px';
+  padding: '2px';
+  border-radius: '50%';
+  width: '2em';
+  height: '2em';
+  color: 'gray';
+  outline: 'none';
+}
+
 .card-title {
+  padding: 0 10px;
+  border-bottom: 1px solid #d1d5da;
   background-color: '#e1e4e8';
   display: 'flex';
   justify-content: 'space-between';
   align-items: 'baseline';
-  padding: 0 10px;
-  border-bottom: 1px solid #d1d5da;
 }
 .app-list-element:nth-child(even) > div > header {
   background-color: #f6f8fa;

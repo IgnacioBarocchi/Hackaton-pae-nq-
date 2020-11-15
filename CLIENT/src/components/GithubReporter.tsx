@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { requestGraphql } from '../helpers/GithubReporterHelper';
+import { requestGraphql } from '../api/GithubReporterHelper';
 
 export default function GithubReporter() {
   useEffect(() => {
