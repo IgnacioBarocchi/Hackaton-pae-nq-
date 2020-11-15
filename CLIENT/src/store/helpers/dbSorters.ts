@@ -4,7 +4,7 @@ import type {
 } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 
 export const sortByLikes = (array: collection): collection =>
-  [...array].sort((a: idea, b: idea) =>
+  [ ...array ].sort((a: idea, b: idea) =>
     parseInt(a.likes) < parseInt(b.likes)
       ? 1
       : parseInt(b.likes) < parseInt(a.likes)
@@ -16,7 +16,7 @@ export const sortByTag = (
   tag: string,
   array: collection
 ): collection =>
-  [...array].sort((a: idea, b: idea) =>
+  [ ...array ].sort((a: idea, b: idea) =>
     a.tags.includes(tag) < b.tags.includes(tag)
       ? 1
       : b.tags.includes(tag) < a.tags.includes(tag)

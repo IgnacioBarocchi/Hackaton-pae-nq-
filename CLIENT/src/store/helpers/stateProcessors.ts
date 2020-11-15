@@ -5,7 +5,7 @@ import {
 } from '../../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { favouriteRecordUpdater } from '../helpers/favouriteRecordUpdater';
 
-export const likes = (array = [...initialState_ideas_of_hackathon]) =>
+export const likes = (array = [ ...initialState_ideas_of_hackathon ]) =>
   sortByLikes(array);
 
 export const ecologia = (array = likes()): collection =>

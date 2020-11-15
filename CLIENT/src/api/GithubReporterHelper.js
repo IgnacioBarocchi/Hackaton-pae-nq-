@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const client = require('github-graphql-client');
 const owner = 'IgnacioBarocchi';
 const repo = 'Hackaton-pae-nq-';
@@ -31,14 +32,14 @@ function buildCommitQuery(branches) {
         query ($owner: String!, $name: String!) {
           repository(owner: $owner, name: $name) {`;
   for (var key in branches) {
-    if (branches.hasOwnProperty(key) && branches[key].hasNextPage) {
+    if (branches.hasOwnProperty(key) && branches[ key ].hasNextPage) {
       query += `
-            ${key}: ref(qualifiedName: "${branches[key].name}") {
+            ${ key }: ref(qualifiedName: "${ branches[ key ].name }") {
               target {
                 ... on Commit {
                   history(first: 100, after: ${
-                    branches[key].cursor
-                      ? '"' + branches[key].cursor + '"'
+                    branches[ key ].cursor
+                      ? '"' + branches[ key ].cursor + '"'
                       : null
                   }) {
                     ...CommitFragment
@@ -51,6 +52,7 @@ function buildCommitQuery(branches) {
   query += `
           }
         }`;
+  // eslint-disable-next-line no-use-before-define
   query += commitFragment;
   return query;
 }
@@ -98,9 +100,9 @@ function buildBranchObject(branch) {
 
   for (var i = 0; i < branch.length; i++) {
     // console.log("branch " + branch[i].node.name);
-    refs['branch' + i] = {
-      name: branch[i].node.name,
-      totalCount: branch[i].node.target.history.totalCount,
+    refs[ 'branch' + i ] = {
+      name: branch[ i ].node.name,
+      totalCount: branch[ i ].node.target.history.totalCount,
       cursor: null,
       hasNextPage: true,
       commits: [],
@@ -116,7 +118,7 @@ export async function requestGraphql() {
 
   // get all branches
   while (iterateBranch) {
-    let res = await doRequest(branchQuery, {
+    const res = await doRequest(branchQuery, {
       owner: owner,
       name: repo,
       branchCursor: cursor,
@@ -136,7 +138,7 @@ export async function requestGraphql() {
 
   for (var j = 0; j < refChunk.length; j++) {
     //1) store branches in a format that makes it easy to concat commit when receiving the query result
-    var refs = buildBranchObject(refChunk[j]);
+    var refs = buildBranchObject(refChunk[ j ]);
 
     //2) query commits while there are some pages existing. Note that branches that don't have pages are not
     //added in subsequent request. When there are no more page, the loop exit
@@ -146,7 +148,7 @@ export async function requestGraphql() {
     while (hasNextPage) {
       var commitQuery = buildCommitQuery(refs);
       // console.log("request : " + count);
-      let commitResult = await doRequest(commitQuery, {
+      const commitResult = await doRequest(commitQuery, {
         owner: owner,
         name: repo,
       });
@@ -154,16 +156,16 @@ export async function requestGraphql() {
       for (var key in refs) {
         if (
           refs.hasOwnProperty(key) &&
-          commitResult.data.repository[key]
+          commitResult.data.repository[ key ]
         ) {
           // isEmpty = false;
-          let history =
-            commitResult.data.repository[key].target.history;
-          refs[key].commits = refs[key].commits.concat(history.nodes);
-          refs[key].cursor = history.pageInfo.hasNextPage
+          const history =
+            commitResult.data.repository[ key ].target.history;
+          refs[ key ].commits = refs[ key ].commits.concat(history.nodes);
+          refs[ key ].cursor = history.pageInfo.hasNextPage
             ? history.pageInfo.endCursor
             : '';
-          refs[key].hasNextPage = history.pageInfo.hasNextPage;
+          refs[ key ].hasNextPage = history.pageInfo.hasNextPage;
           // ref
           /*
           console.log(
@@ -180,7 +182,7 @@ export async function requestGraphql() {
               refs[key].name
           );
 */
-          if (refs[key].hasNextPage) {
+          if (refs[ key ].hasNextPage) {
             hasNextPage = true;
           }
         }

@@ -1,4 +1,5 @@
+/* eslint-disable no-undef */
 //@ts-ignore
-require("dotenv").config();
+require('dotenv').config();
 
 export default process.env.REACT_APP_GITHUB_TOKEN;

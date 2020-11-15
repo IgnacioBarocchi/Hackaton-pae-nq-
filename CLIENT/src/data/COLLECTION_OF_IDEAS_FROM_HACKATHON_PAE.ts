@@ -31,7 +31,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132501',
     boolVal: false,
-    tags: ['ecología', 'ecología'],
+    tags: [ 'ecología', 'ecología' ],
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132550',
     boolVal: false,
-    tags: ['economía'],
+    tags: [ 'economía' ],
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132448',
     boolVal: false,
-    tags: ['transporte'],
+    tags: [ 'transporte' ],
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132414',
     boolVal: false,
-    tags: ['ecología', 'ecología'],
+    tags: [ 'ecología', 'ecología' ],
   },
   {
     id: 7,
@@ -140,7 +140,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132407',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 13,
@@ -162,7 +162,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132487',
     boolVal: false,
-    tags: ['medicina'],
+    tags: [ 'medicina' ],
   },
   {
     id: 15,
@@ -191,7 +191,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132401',
     boolVal: false,
-    tags: ['ecología', 'ecología'],
+    tags: [ 'ecología', 'ecología' ],
   },
   {
     id: 17,
@@ -213,7 +213,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132428',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 19,
@@ -224,7 +224,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132391',
     boolVal: false,
-    tags: ['ecología', 'economía'],
+    tags: [ 'ecología', 'economía' ],
   },
   {
     id: 20,
@@ -256,7 +256,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132425',
     boolVal: false,
-    tags: ['economía'],
+    tags: [ 'economía' ],
   },
   {
     id: 23,
@@ -267,7 +267,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132509',
     boolVal: false,
-    tags: ['ecología', 'economía'],
+    tags: [ 'ecología', 'economía' ],
   },
   {
     id: 24,
@@ -278,7 +278,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132377',
     boolVal: false,
-    tags: ['economía'],
+    tags: [ 'economía' ],
   },
   {
     id: 25,
@@ -289,7 +289,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132441',
     boolVal: false,
-    tags: ['transporte'],
+    tags: [ 'transporte' ],
   },
   {
     id: 26,
@@ -300,7 +300,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132383',
     boolVal: false,
-    tags: ['medicina'],
+    tags: [ 'medicina' ],
   },
   {
     id: 27,
@@ -311,7 +311,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132440',
     boolVal: false,
-    tags: ['ecología', 'ecología'],
+    tags: [ 'ecología', 'ecología' ],
   },
   {
     id: 28,
@@ -322,7 +322,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132435',
     boolVal: false,
-    tags: ['economía', 'economía'],
+    tags: [ 'economía', 'economía' ],
   },
   {
     id: 29,
@@ -410,7 +410,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132365',
     boolVal: false,
-    tags: ['medicina', 'medicina', 'medicina', 'medicina'],
+    tags: [ 'medicina', 'medicina', 'medicina', 'medicina' ],
   },
   {
     id: 37,
@@ -421,7 +421,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132370',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 38,
@@ -443,7 +443,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132453',
     boolVal: false,
-    tags: ['ecología', 'economía'],
+    tags: [ 'ecología', 'economía' ],
   },
   {
     id: 40,
@@ -465,7 +465,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132510',
     boolVal: false,
-    tags: ['transporte'],
+    tags: [ 'transporte' ],
   },
   {
     id: 42,
@@ -476,7 +476,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132427',
     boolVal: false,
-    tags: ['transporte'],
+    tags: [ 'transporte' ],
   },
   {
     id: 43,
@@ -498,7 +498,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132326',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 45,
@@ -509,7 +509,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132432',
     boolVal: false,
-    tags: ['ecología', 'ecología', 'ecología'],
+    tags: [ 'ecología', 'ecología', 'ecología' ],
   },
   {
     id: 46,
@@ -520,7 +520,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132395',
     boolVal: false,
-    tags: ['economía'],
+    tags: [ 'economía' ],
   },
   {
     id: 47,
@@ -531,7 +531,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132363',
     boolVal: false,
-    tags: ['economía', 'economía', 'economía', 'transporte'],
+    tags: [ 'economía', 'economía', 'economía', 'transporte' ],
   },
   {
     id: 48,
@@ -542,7 +542,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132382',
     boolVal: false,
-    tags: ['medicina'],
+    tags: [ 'medicina' ],
   },
   {
     id: 49,
@@ -564,7 +564,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132574',
     boolVal: false,
-    tags: ['medicina', 'economía', 'economía'],
+    tags: [ 'medicina', 'economía', 'economía' ],
   },
   {
     id: 51,
@@ -603,7 +603,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132378',
     boolVal: false,
-    tags: ['transporte'],
+    tags: [ 'transporte' ],
   },
   {
     id: 54,
@@ -614,7 +614,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132439',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 55,
@@ -625,7 +625,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132433',
     boolVal: false,
-    tags: ['ecología'],
+    tags: [ 'ecología' ],
   },
   {
     id: 56,
@@ -636,7 +636,7 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132430',
     boolVal: false,
-    tags: ['medicina'],
+    tags: [ 'medicina' ],
   },
   {
     id: 57,
@@ -647,6 +647,6 @@ export const COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE: collection = [
     source:
       'https://ar.socialab.com/challenges/hackatonpaenqn/idea/132436',
     boolVal: false,
-    tags: ['medicina'],
+    tags: [ 'medicina' ],
   },
 ];

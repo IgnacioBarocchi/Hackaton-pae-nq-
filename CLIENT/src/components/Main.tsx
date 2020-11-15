@@ -2,24 +2,23 @@ import React from 'react';
 import Ul from './Ul';
 import Table from './Table';
 import Chart_ from './Chart';
-// import GithubReporter from './GithubReporter';
+import { StyledColumnWrapper, StyledMainContent, StyledSection } from '../style/styled';
 
 export default function Main() {
   return (
-      <main className="main-content">
-          <div className="left">
+      <StyledMainContent>
+          <StyledSection >
               <div id="ideas">
                   <Ul />
               </div>
-          </div>
-          <div className="right">
-              <section className="col-wrapper">
+          </StyledSection>
+          <StyledSection >
+              <StyledColumnWrapper >
                   <h3 id="date"></h3>
                   <Table />
                   <Chart_ />
-                  {/* <GithubReporter /> */}
-              </section>
-          </div>
-      </main>
+              </StyledColumnWrapper>
+          </StyledSection>
+      </StyledMainContent>
   );
 }

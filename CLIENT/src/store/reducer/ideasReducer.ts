@@ -20,7 +20,7 @@ export const ideasReducer = (
   state = initialState,
   action: { type: string; payload: any }
 ): collection => {
-  const State = [...state];
+  const State = [ ...state ];
 
   switch (action.type) {
     case UPDATE_ITEM:

@@ -5,37 +5,6 @@ html {
   background-color: #f6f8fa;
 }
 
-/* .menu-list,
-menu {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.menu-list * {
-  margin: 10px;
-}
-
-.menu-list {
-  margin: 0;
-}
-
-.menu-item {
-  margin: 0;
-} */
-
-.main-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.left,
-.right {
-  margin-top: 70px;
-  width: 50%;
-}
-
 .box {
   color: #24292e;
   border-radius: 8px;
@@ -60,6 +29,7 @@ menu {
   -ms-transition: 4s;
   -o-transition: 4s;
 }
+
 .card:hover {
   transition: 1s;
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -69,7 +39,6 @@ menu {
 
 .card:not(:hover) {
   transition: 1s;
-  /* opacity: 0.8; */
 }
 
 .card-title {
@@ -87,12 +56,6 @@ menu {
 
 .big {
   margin-bottom: 40px;
-}
-
-.col-wrapper {
-  position: fixed;
-  margin: 0 20px;
-  width: 48%;
 }
 
 table {
