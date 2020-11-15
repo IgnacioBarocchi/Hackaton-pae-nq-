@@ -1,7 +1,8 @@
 {
-  "semi": true,
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "tabWidth": 2,
-  "object-curly-spacing": ["error", "always"]
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "object-curly-spacing": ["error", "always"],
+    "trailingComma": "all",
+    "printWidth": 120
 }

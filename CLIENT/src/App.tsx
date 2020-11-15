@@ -12,17 +12,17 @@ import { ideasReducer } from './store/reducer/ideasReducer';
 // export const DataBaseContext: any = createContext();
 
 function App(): JSX.Element {
-  //@ts-ignore
-  // const [state, dispatch] = useReducer(ideasReducer, initialDataBase);
+    //@ts-ignore
+    // const [state, dispatch] = useReducer(ideasReducer, initialDataBase);
 
-  return (
-      <>
-          {/* <DataBaseContext.Provider value={{ state, dispatch }}> */}
-          <Nav />
-          <Main />
-          {/* </DataBaseContext.Provider> */}
-      </>
-  );
+    return (
+        <>
+            {/* <DataBaseContext.Provider value={{ state, dispatch }}> */}
+            <Nav />
+            <Main />
+            {/* </DataBaseContext.Provider> */}
+        </>
+    );
 }
 
 export default App;

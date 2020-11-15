@@ -1,5 +1,5 @@
 /* eslint-disable template-curly-spacing */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledNavigation = styled.nav`
   z-index: 2;
@@ -76,28 +76,38 @@ export const StyledColumnWrapper = styled.div`
   margin: 0 20px;
   width: 48%;
 `;
-const box = `
-color: #24292e;
-border-radius: 8px;
-border: 1px solid #d1d5da;
-background-color: white;
-border-radius: 4px;
-border-top-left-radius: 4px;
-border-top-right-radius: 4px;
-border-bottom-right-radius: 4px;
-border-bottom-left-radius: 4px;
+const box = css`
+  color: #24292e;
+  border-radius: 8px;
+  border: 1px solid #d1d5da;
+  background-color: white;
+  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+`;
+
+const big = css`
+  margin-bottom: 40px;
+`;
+
+const content = css`
+  padding: 10px;
 `;
 
 export const StyledBox = styled.div`
   ${box}
 `;
+
 export const StyledBigBox = styled.div`
   ${box}
-  margin-bottom: 40px;
+  ${big}
 `;
+
 export const StyledBoxContent = styled.div`
   ${box}
-  padding: 10px;
+  ${content}
 `;
 
 export const SyledCardHeader = styled.header`
@@ -132,9 +142,10 @@ export const styledCard = styled.div`
 export const StyledTable = styled.table`
   border-collapse: collapse;
   width: 100%;
+  ${box}
 `;
 
-export const StyledTh = styled.tr`
+export const StyledTr = styled.tr`
   border: 1px solid #dddddd;
   text-align: left;
   padding: 5px;
@@ -142,14 +153,20 @@ export const StyledTh = styled.tr`
     background-color: #f6f8fa;
   }
 `;
-
-export const StyledTd = styled.tr`
+const thtd = css`
   border: 1px solid #dddddd;
   text-align: left;
   padding: 5px;
 `;
 
-export const StyledTagSpan = styled.span`
+export const StyledTd = styled.td`
+  ${thtd}
+`;
+
+export const StyledTh = styled.th`
+  ${thtd}
+`;
+const tag = css`
   text-transform: capitalize;
   margin-right: 0.5em;
   color: #24292e;
@@ -163,6 +180,20 @@ export const StyledTagSpan = styled.span`
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
 `;
+export const StyledTagSpan = styled.span`
+  ${tag}
+`;
+
+export const FavouriteBtn = styled.span`
+  ${tag}
+  font-Size: 20px;
+  padding: 2px;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  color: gray;
+  outline: none;
+`;
 
 export const StyledInputNumber = styled.input`
   outline: none;
@@ -175,4 +206,7 @@ export const StyledInputNumber = styled.input`
 export const Ranking = styled.div`
   overflow-y: auto;
   max-height: 300px;
+  ${box}
+  ${big}
+  ${content}
 `;

@@ -37,9 +37,7 @@ html {
     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
-.card:not(:hover) {
-  transition: 1s;
-}
+
 
 .card-title {
   padding: 0 10px;
@@ -54,14 +52,6 @@ html {
   background-color: #f6f8fa;
 }
 
-.big {
-  margin-bottom: 40px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
 
 td,
 th {
@@ -76,31 +66,4 @@ tr:nth-child(even) {
 
 .app-list-element {
   margin-bottom: 20px;
-}
-.input-number {
-  outline: none;
-  border: 0;
-  width: 60px;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-#top-10 {
-  overflow-y: auto;
-  max-height: 300px;
-}
-
-.tag-span {
-  text-transform: capitalize;
-  margin-right: 0.5em;
-  color: #24292e;
-  padding: 2px 6px;
-  border-radius: 30px;
-  border: 1px solid #d1d5da;
-  background-color: #f6f8fa;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
 }
