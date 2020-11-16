@@ -13,13 +13,3 @@ export const favouriteRecordUpdater = (array: any, idOfSelectedItem: number) =>
         }
         return record;
     });
-
-/*
-Using immer
-import { produce } from 'immer';
-produce(array, (draftState: any) => {
-// @ts-ignore
-draftState.record[idOfSelectedItem].boolVal = !draftState.record[
-  idOfSelectedItem
-].boolVal;
-*/

@@ -6,7 +6,6 @@ import { sortByLikes } from '../store/helpers/dbSorters';
 import { Ranking, StyledInputNumber, StyledTable, StyledTd, StyledTh, StyledTr } from '../style/styled';
 
 export default function Table() {
-    // The contex
     // eslint-disable-next-line no-shadow
     const state = useSelector((state) => state);
     const [number, setNumber] = useState(5);

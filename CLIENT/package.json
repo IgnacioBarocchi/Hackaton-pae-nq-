@@ -1,5 +1,5 @@
 {
-    "name": "my-app",
+    "name": "hackaton-pae-nq-",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -92,5 +92,22 @@
                 "order": "smacss"
             }
         }
+    },
+    "postcssSorting.config": {
+        "order": [
+            "custom-properties",
+            "dollar-variables",
+            "declarations",
+            "at-rules",
+            "rules"
+        ],
+        "properties-order": [
+            "display",
+            "position",
+            "top",
+            "right",
+            "bottom",
+            "left"
+        ]
     }
 }

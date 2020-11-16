@@ -1,6 +1,6 @@
+import './style/productionStyle.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
