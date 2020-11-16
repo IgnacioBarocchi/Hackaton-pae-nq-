@@ -21,36 +21,7 @@ html {
   padding: 10px;
 }
 
-.card {
-  opacity: 1;
-  transition: 4s;
-  -webkit-transition: 4s;
-  -moz-transition: 4s;
-  -ms-transition: 4s;
-  -o-transition: 4s;
-}
 
-.card:hover {
-  transition: 1s;
-  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-}
-
-
-
-.card-title {
-  padding: 0 10px;
-  border-bottom: 1px solid #d1d5da;
-  background-color: '#e1e4e8';
-  display: 'flex';
-  justify-content: 'space-between';
-  align-items: 'baseline';
-}
-
-.app-list-element:nth-child(even) > div > header {
-  background-color: #f6f8fa;
-}
 
 
 td,
@@ -62,8 +33,4 @@ th {
 
 tr:nth-child(even) {
   background-color: #f6f8fa;
-}
-
-.app-list-element {
-  margin-bottom: 20px;
 }

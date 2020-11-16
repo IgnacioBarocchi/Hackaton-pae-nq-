@@ -2,211 +2,235 @@
 import styled, { css } from 'styled-components';
 
 export const StyledNavigation = styled.nav`
-  z-index: 2;
-  position: fixed;
-  display: flex;
-  width: 100%;
-  max-height: 3em;
-  background-color: white;
-  padding: 5px;
-  margin: 0;
-  border-top: 3px solid #d1d5da;
-  color: #24292e;
-  border-bottom: 1px solid #d1d5da;
-  align-items: center;
-  justify-content: center;
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    max-height: 3em;
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+    border-top: 3px solid #d1d5da;
+    color: #24292e;
+    border-bottom: 1px solid #d1d5da;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const StyledButton = styled.button`
-  cursor: pointer;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+`;
+
+const li = css`
+    list-style: none;
+    margin: 0;
+    margin-bottom: 20px;
 `;
 
 export const StyledLi = styled.li`
-  list-style: none;
-  margin: 0;
-  margin-bottom: 20px;
+    ${li}
+`;
+
+export const StyledMainLi = styled.li`
+    ${li}
+    margin-bottom: 20px;
+    &:nth-child(even) > div > header {
+        background-color: #f6f8fa;
+    }
 `;
 
 export const StyledUl = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  * {
-    margin: 10px;
-  }
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    * {
+        margin: 10px;
+    }
 `;
 
 export const MenuWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `;
 
 export const IconContainer = styled.span`
-  font-size: 20px;
-  padding: 2px;
-  border-radius: 50%;
-  width: 2em;
-  height: 2em;
-  color: gray;
-  outline: none;
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    color: gray;
+    outline: none;
 `;
 
 export const HeartIcon = styled.span`
-  color: Crimson;
+    color: Crimson;
 `;
 
 export const StyledMainContent = styled.main`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 export const StyledSection = styled.section`
-  margin-top: 70px;
-  width: 50%;
+    margin-top: 70px;
+    width: 50%;
 `;
 
 export const StyledColumnWrapper = styled.div`
-  position: fixed;
-  margin: 0 20px;
-  width: 48%;
+    position: fixed;
+    margin: 0 20px;
+    width: 48%;
 `;
 const box = css`
-  color: #24292e;
-  border-radius: 8px;
-  border: 1px solid #d1d5da;
-  background-color: white;
-  border-radius: 4px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+    color: #24292e;
+    border-radius: 8px;
+    border: 1px solid #d1d5da;
+    background-color: white;
+    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
 `;
 
 const big = css`
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 `;
 
 const content = css`
-  padding: 10px;
+    padding: 10px;
 `;
 
 export const StyledBox = styled.div`
-  ${box}
+    ${box}
 `;
 
 export const StyledBigBox = styled.div`
-  ${box}
-  ${big}
+    ${box}
+    ${big}
 `;
 
 export const StyledBoxContent = styled.div`
-  ${box}
-  ${content}
+    ${box}
+    ${content}
 `;
 
 export const SyledCardHeader = styled.header`
-  display: flex;
-  padding: 0 10px;
-  border-bottom: 1px solid #d1d5da;
-  background-color: #e1e4e8;
-  justify-content: space-between;
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+    display: flex;
+    padding: 0 10px;
+    border-bottom: 1px solid #d1d5da;
+    background-color: #e1e4e8;
+    justify-content: space-between;
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 `;
 
-export const styledCard = styled.div`
-  opacity: 1;
-  transition: 4s;
-  -webkit-transition: 4s;
-  -moz-transition: 4s;
-  -ms-transition: 4s;
-  -o-transition: 4s;
-  &:hover {
-    transition: 1s;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-  }
-  &:not(:hover) {
-    transition: 1s;
-  }
+const card = css`
+    opacity: 1;
+    transition: 4s;
+    -webkit-transition: 4s;
+    -moz-transition: 4s;
+    -ms-transition: 4s;
+    -o-transition: 4s;
+    &:hover {
+        transition: 1s;
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+    &:not(:hover) {
+        transition: 1s;
+    }
+`;
+
+export const StyledCard = styled.div`
+    ${card}
+`;
+
+export const StyledBoxCard = styled.div`
+    ${box}
+    ${card}
 `;
 
 export const StyledTable = styled.table`
-  border-collapse: collapse;
-  width: 100%;
-  ${box}
+    border-collapse: collapse;
+    width: 100%;
+    ${box}
 `;
 
 export const StyledTr = styled.tr`
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 5px;
-  &:nth-child(even) {
-    background-color: #f6f8fa;
-  }
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+    &:nth-child(even) {
+        background-color: #f6f8fa;
+    }
 `;
 const thtd = css`
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 5px;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
 `;
 
 export const StyledTd = styled.td`
-  ${thtd}
+    ${thtd}
 `;
 
 export const StyledTh = styled.th`
-  ${thtd}
+    ${thtd}
+    text-align: center
 `;
+
 const tag = css`
-  text-transform: capitalize;
-  margin-right: 0.5em;
-  color: #24292e;
-  padding: 2px 6px;
-  border-radius: 30px;
-  border: 1px solid #d1d5da;
-  background-color: #f6f8fa;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -ms-border-radius: 6px;
-  -o-border-radius: 6px;
+    text-transform: capitalize;
+    margin-right: 0.5em;
+    color: #24292e;
+    padding: 2px 6px;
+    border-radius: 30px;
+    border: 1px solid #d1d5da;
+    background-color: #f6f8fa;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
 `;
+
 export const StyledTagSpan = styled.span`
-  ${tag}
+    ${tag}
 `;
 
 export const FavouriteBtn = styled.span`
-  ${tag}
-  font-Size: 20px;
-  padding: 2px;
-  border-radius: 50%;
-  width: 2em;
-  height: 2em;
-  color: gray;
-  outline: none;
+    ${tag}
+    font-Size: 20px;
+    padding: 2px;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    color: gray;
+    outline: none;
 `;
 
 export const StyledInputNumber = styled.input`
-  outline: none;
-  border: 0;
-  width: 60px;
-  font-size: 1em;
-  font-weight: bold;
+    outline: none;
+    border: 0;
+    width: 60px;
+    font-size: 1em;
+    font-weight: bold;
 `;
 
 export const Ranking = styled.div`
-  overflow-y: auto;
-  max-height: 300px;
-  ${box}
-  ${big}
-  ${content}
+    overflow-y: auto;
+    max-height: 300px;
+    ${box}
+    ${big}
+   ${content}
 `;

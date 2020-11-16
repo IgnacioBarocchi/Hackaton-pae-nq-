@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import './style/App.css';
 import './style/style.css';
 import './style/fonts.css';

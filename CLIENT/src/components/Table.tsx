@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import type { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { sortByLikes } from '../store/helpers/dbSorters';
-import { Ranking, StyledInputNumber, StyledTable } from '../style/styled';
+import { Ranking, StyledInputNumber, StyledTable, StyledTd, StyledTh, StyledTr } from '../style/styled';
 
 export default function Table() {
     // The contex
@@ -30,11 +31,11 @@ export default function Table() {
             </h2>
             <StyledTable id="tbody">
                 <tbody>
-                    <tr>
-                        <th>Proyecto</th>
-                        <th style={{ textAlign: 'center' }}>Likes</th>
-                        <th style={{ textAlign: 'center' }}>Tema</th>
-                    </tr>
+                    <StyledTr>
+                        <StyledTh>Proyecto</StyledTh>
+                        <StyledTh>Likes</StyledTh>
+                        <StyledTh>Tema</StyledTh>
+                    </StyledTr>
 
                     {
                         // Todo: This should trigger an action
@@ -43,18 +44,18 @@ export default function Table() {
                             .slice(0, number)
                             .map((record: idea, index: number) => {
                                 return (
-                                    <tr key={index}>
-                                        <td>{record.title}</td>
-                                        <td style={{ textAlign: 'center' }}>{record.likes}</td>
-                                        <td style={{ textAlign: 'center' }}>
+                                    <StyledTr key={index}>
+                                        <StyledTd>{record.title}</StyledTd>
+                                        <StyledTd>{record.likes}</StyledTd>
+                                        <StyledTd>
                                             {' '}
                                             {record.tags.length === 0
                                                 ? ''
                                                 : record.tags.length > 1
                                                 ? record.tags.map((tag, index) => <span key={index}>#{tag}, </span>)
                                                 : record.tags.map((tag, index) => <span key={index}>#{tag} </span>)}
-                                        </td>
-                                    </tr>
+                                        </StyledTd>
+                                    </StyledTr>
                                 );
                             })
                     }

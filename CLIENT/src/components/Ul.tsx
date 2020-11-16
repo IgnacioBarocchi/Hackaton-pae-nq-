@@ -3,7 +3,16 @@ import { connect } from 'react-redux';
 import { idea } from '../data/COLLECTION_OF_IDEAS_FROM_HACKATHON_PAE';
 import { updateItem_action } from '../store/actions/actions';
 import store from '../store/store';
-import { FavouriteBtn, HeartIcon, IconContainer, StyledLi, StyledTagSpan, SyledCardHeader } from '../style/styled';
+import {
+    FavouriteBtn,
+    HeartIcon,
+    IconContainer,
+    StyledBoxCard,
+    StyledBoxContent,
+    StyledMainLi,
+    StyledTagSpan,
+    SyledCardHeader,
+} from '../style/styled';
 
 interface RootState {
     isOn: boolean;
@@ -19,8 +28,8 @@ function Ul() {
     return (
         <ul id="#project-list">
             {store.getState().map((record: idea, index: number) => (
-                <StyledLi className="app-list-element" key={index}>
-                    <div className="box card">
+                <StyledMainLi key={index}>
+                    <StyledBoxCard>
                         <SyledCardHeader>
                             <h3 style={{ color: record.boolVal ? '#e1e4e8' : '' }}>{record.title}</h3>
                             <div>
@@ -33,7 +42,7 @@ function Ul() {
                                 </FavouriteBtn>
                             </div>
                         </SyledCardHeader>
-                        <div className="box-content">
+                        <StyledBoxContent>
                             <p>{record.description}</p>
                             {record.tags.length === 0
                                 ? ''
@@ -43,9 +52,9 @@ function Ul() {
                                     {record.source.replace('https://ar.socialab.com/challenges', '')}
                                 </a>
                             </p>
-                        </div>
-                    </div>
-                </StyledLi>
+                        </StyledBoxContent>
+                    </StyledBoxCard>
+                </StyledMainLi>
             ))}
         </ul>
     );

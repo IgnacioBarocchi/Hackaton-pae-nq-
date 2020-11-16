@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useMemo, useContext } from 'react';
 //@ts-ignore
 import { Chart } from 'react-charts';

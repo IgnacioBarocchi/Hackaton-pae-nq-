@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { useEffect } from 'react';
 import { requestGraphql } from '../api/GithubReporterHelper';
 
